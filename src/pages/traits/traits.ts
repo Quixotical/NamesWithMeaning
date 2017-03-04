@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
+import { Http, Response } from '@angular/http';
+import 'rxjs/add/operator/map';
+
 /*
   Generated class for the Traits page.
 
@@ -13,7 +16,13 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class TraitsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  gender:string;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.gender = navParams.get('gender');
+
+
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TraitsPage');

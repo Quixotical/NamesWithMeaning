@@ -21,6 +21,8 @@ export class MyApp {
       this.getStuff().subscribe(
         (data) => {
           console.log(data);
+          let traits = data;
+
         },
         (error) => {
           console.log(error);
