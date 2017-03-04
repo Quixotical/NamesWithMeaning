@@ -5,14 +5,14 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/map';
 
-import { TabsPage } from '../pages/tabs/tabs';
+import { GenderSelectionPage } from '../pages/gender-selection/gender-selection';
 
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage = TabsPage;
+  rootPage = GenderSelectionPage;
 
   constructor(platform: Platform, private http: Http) {
     platform.ready().then(() => {
