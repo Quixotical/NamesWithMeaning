@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
-import { Http, Response } from '@angular/http';
-import 'rxjs/add/operator/map';
+import { SetupServices } from './setup.services';
 
 import { GenderSelectionPage } from '../pages/gender-selection/gender-selection';
 
@@ -14,20 +13,13 @@ import { GenderSelectionPage } from '../pages/gender-selection/gender-selection'
 export class MyApp {
   rootPage = GenderSelectionPage;
 
-  constructor(platform: Platform, private http: Http) {
+  constructor(platform: Platform, public setupServices: SetupServices) {
     platform.ready().then(() => {
 
+      setupServices.setupApp().then(
 
-      this.getStuff().subscribe(
-        (data) => {
-          console.log(data);
-          let traits = data;
-
-        },
-        (error) => {
-          console.log(error);
-        }
       );
+
 
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -36,10 +28,5 @@ export class MyApp {
     });
   }
 
-  getStuff(){
 
-      return this.http.get('http://localhost:3000/traits')
-        .map((res:Response) => res.json());
-
-  }
 }

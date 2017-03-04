@@ -6,6 +6,8 @@ import { ContactPage } from '../pages/contact/contact';
 import { TraitsPage } from '../pages/traits/traits';
 import { GenderSelectionPage } from '../pages/gender-selection/gender-selection';
 
+import { SetupServices } from './setup.services';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -23,6 +25,6 @@ import { GenderSelectionPage } from '../pages/gender-selection/gender-selection'
     GenderSelectionPage,
     TraitsPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, SetupServices]
 })
 export class AppModule {}

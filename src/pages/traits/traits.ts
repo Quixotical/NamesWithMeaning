@@ -17,15 +17,19 @@ import 'rxjs/add/operator/map';
 export class TraitsPage {
 
   gender:string;
+  traitList:Array<string> = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.gender = navParams.get('gender');
 
-
+    this.traitList = navParams.get('traitList');
+    console.log(this.traitList);
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TraitsPage');
   }
+
+
 
 }
